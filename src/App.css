@@ -1,0 +1,136 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  color: #111;
+  text-align: center;
+  width: 100%;
+}
+
+html, body {
+  background-color: #ffffff;
+  color: #111;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.hint { margin: 0.25rem 0 0.75rem; color: #666; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  width: 90vmin;
+  height: 90vmin;
+  margin: 1rem auto 0;
+  background: #222;
+  gap: 0; /* remove the gaps causing border overlap */
+  border: 2px solid #000; /* outer border */
+}
+
+.tile {
+  background: #f8f8f8;
+  border: 1px solid #000; /* consistent uniform borders */
+  box-sizing: border-box; /* make border stay inside */
+  font-size: 0.68rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  transition: transform 80ms ease, background 120ms ease;
+}
+
+.tile .name { line-height: 1.05; }
+.tile .chance { margin-top: 2px; color: #333; }
+
+.tile.good { background: #b9f3b9; }
+.tile.hovered { outline: 3px solid #0a84ff; z-index: 1; transform: scale(1.02); }
+
+.empty { background: #333; }
+
+.panel {
+  width: 90vmin;
+  margin: 0.75rem auto 0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.legend { color: #555; margin-top: 0.25rem; }
+
+.panel {
+  width: 90vmin;
+  margin: 0.75rem auto 0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.muted { color: #777; }
+
+.tableWrap {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.details {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.details th, .details td {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+}
+
+.details thead th {
+  background: #f3f3f3;
+}
+
+.hint { margin: 0.25rem 0 0.75rem; color: #666; }
+
+.controls { width: 90vmin; margin: 0 auto 0.5rem; text-align: right; }
+.controls button { padding: 6px 10px; }
+
+.tile.hovered { outline: 3px solid #0a84ff; z-index: 1; transform: scale(1.02); }
+
+.toggles {
+  width: 90vmin;
+  margin: 0.5rem auto 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.toggles button {
+  padding: 8px 14px;
+  border: 1px solid #888;
+  background: #f8f8f8;
+  color: #000;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.toggles button:hover {
+  background: #eaeaea;
+  border-color: #555;
+}
+
+/* Active state (when toggled ON) */
+.toggles button.active {
+  background: #444;
+  color: #fff;
+  border-color: #222;
+}
